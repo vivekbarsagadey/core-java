@@ -25,7 +25,10 @@ public class Test2 {
 		
 		System.out.println(VelocityTemplate.generate());
 		
-		printerService.printString("\\\\192.168.100.12\\POS-58-Series", VelocityTemplate.generate());
+		//printerService.printString("\\\\192.168.100.12\\POS-58-Series", VelocityTemplate.generate());
+		
+		printerService.printString("EPSON TM-T82II Receipt", VelocityTemplate.generate());
+		
 		
 		//printerService.printString("EPSON TM-T82II Receipt", VelocityTemplate.generate());
 		
@@ -45,7 +48,7 @@ class VelocityTemplate{
 		VelocityEngine velocityEngine = new VelocityEngine();
 		velocityEngine.init();
 		    
-		Template t = velocityEngine.getTemplate("./src/main/java/com/bnb/gj/general/printer/index.vm");
+		Template t = velocityEngine.getTemplate("./src/main/java/com/bnb/gj/general/printer/receipt.vm");
 		     
 		VelocityContext context = new VelocityContext();
 		
