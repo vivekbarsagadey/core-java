@@ -28,7 +28,8 @@ public class Test2 {
 		//printerService.printString("\\\\192.168.100.12\\POS-58-Series", VelocityTemplate.generate());
 		
 		//printerService.printString("\\\\192.168.100.55\\EPSON TM-T82II Receipt", VelocityTemplate.generate());
-		printerService.printString("\\192.168.100.55\\EPSON TM-T82II Receipt5", VelocityTemplate.generate());
+		//printerService.printString("EPSON TM-T82II Receipt5 56", VelocityTemplate.generate());
+		printerService.printString("EPSON TM-T82II Receipt5", VelocityTemplate.generate());
 		
 		
 		//printerService.printString("EPSON TM-T82II Receipt", VelocityTemplate.generate());

@@ -7,7 +7,7 @@ public class FileClassPathCheck {
 
 	public static void main(String[] args) {
 		try {
-			System.out.println(new FileClassPathCheck().path().getPath());
+			System.out.println(new FileClassPathCheck().path().getPath().split("target/classes/")[0]);
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
