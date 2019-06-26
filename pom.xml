@@ -90,6 +90,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>com.smattme</groupId>
+			<artifactId>mysql-backup4j</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+
+		<dependency>
 			<groupId>com.itextpdf</groupId>
 			<artifactId>itext-pdfa</artifactId>
 			<version>5.5.13</version>
