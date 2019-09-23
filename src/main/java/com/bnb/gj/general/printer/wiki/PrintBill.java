@@ -1,4 +1,4 @@
-package com.bnb.gj.general.predicate;
+package com.bnb.gj.general.printer.wiki;
 
 import java.io.StringWriter;
 import java.util.ArrayList;
@@ -21,8 +21,6 @@ import org.apache.velocity.app.VelocityEngine;
 import com.bnb.gj.general.printer.Bill;
 import com.bnb.gj.general.printer.Item;
 import com.bnb.gj.general.printer.StringUtil;
-import com.bnb.gj.general.printer.wiki.PrintCommands;
-import com.bnb.gj.general.printer.wiki.TemplateProcesser;
 
 public class PrintBill {
 	private static final String PRINTER_NAME = "office-kot-1";
