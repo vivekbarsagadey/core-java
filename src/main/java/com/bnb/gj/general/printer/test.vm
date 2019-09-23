@@ -1,6 +1,6 @@
-|w:font:32| this is name 1 data $name
-|w:font:20| this is name 2 data $name
-|w:font:40| this is name 3 data $name
+|w:align:left| |w:font:48| this is name 1 data $name|w:line:new||w:line:new||w:line:new|
+|w:align:right| |w:font:49| this is name 2 data $name|w:line:new||w:line:new|
+|w:align:center| |w:font:48| this is name 3 data $name|w:line:new|
 
 
 
