@@ -23,16 +23,16 @@ public class Test2 {
 		//print some stuff
 		//printerService.printString("POS-58-Series", "\n\n testing testing 1 2 3eeeee \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 		
-		System.out.println(VelocityTemplate.generate());
+		//System.out.println(VelocityTemplate.generate());
 		
 		//printerService.printString("\\\\192.168.100.12\\POS-58-Series", VelocityTemplate.generate());
 		
 		//printerService.printString("\\\\192.168.100.55\\EPSON TM-T82II Receipt", VelocityTemplate.generate());
 		//printerService.printString("EPSON TM-T82II Receipt5 56", VelocityTemplate.generate());
-		printerService.printString("EPSON TM-T82II Receipt5", VelocityTemplate.generate());
+		//printerService.printString("EPSON TM-T82II Receipt5", VelocityTemplate.generate());
 		
 		
-		//printerService.printString("EPSON TM-T82II Receipt", VelocityTemplate.generate());
+		printerService.printString("\\\\192.168.100.23\\POS-58-Series", VelocityTemplate.generate());
 		
  
 		// cut that paper!
