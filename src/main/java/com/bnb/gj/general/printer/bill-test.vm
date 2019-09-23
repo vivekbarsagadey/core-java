@@ -1,0 +1,32 @@
+
+
+$name
+|w:align:center|Lane No 7, KP 
+|w:align:center|Pune 987771 
+|w:align:left|Bill No : 2222  Date : 22/1/2019
+Table No: 22    Cover : 3000
+Item      Qty   Rate     Amount
+--------------------------------
+#foreach( $item in $bill.items )
+$item.name  $item.qty   $item.ammount    $item.totalAmmount
+#end
+
+--------------------------------                 
+        Sub Total     1400.00
+        SC 	7.50%       50.00
+        GST  7.50%      50.00
+        ABC  7.50%      50.00
+--------------------------------     
+            Total    30000.00
+
+Grand Total (Rs) : 30000.00 
+
+VATIN: 299342342
+GSTIN: 2131312321
+      
+      Thank You Visit Again
+
+
+
+
+
