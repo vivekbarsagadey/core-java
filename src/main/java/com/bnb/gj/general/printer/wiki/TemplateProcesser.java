@@ -35,6 +35,9 @@ public class TemplateProcesser {
 		if(PrintCommands.LINE.equalsIgnoreCase(command) ) {
 			buildLine(PrintCommands.LINE);
 		}
+		if(PrintCommands.CHAR.equalsIgnoreCase(command) ) {
+			buildChar(PrintCommands.CHAR);
+		}
 		return this;
 	}
 	
@@ -55,6 +58,17 @@ public class TemplateProcesser {
 	
 	private void buildLine(String command) {
 		this.templateString = this.templateString.replaceAll(Pattern.quote(command+"new|"), processer.newLine());
+		
+		
+	}
+	
+	private void buildChar(String command) {
+		this.templateString = this.templateString.replaceAll(Pattern.quote(command+"emphasized:on|"), processer.emphasized(true)) ;
+		this.templateString = this.templateString.replaceAll(Pattern.quote(command+"emphasized:off|"), processer.emphasized(false)) ;
+		
+		
+		this.templateString = this.templateString.replaceAll(Pattern.quote(command+"doubleHeight:on|"), processer.doubleHeight(true)) ;
+		this.templateString = this.templateString.replaceAll(Pattern.quote(command+"doubleHeight:off|"), processer.doubleHeight(false)) ;
 		
 		
 	}

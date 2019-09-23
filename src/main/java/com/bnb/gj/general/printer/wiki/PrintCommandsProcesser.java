@@ -52,5 +52,32 @@ public class PrintCommandsProcesser {
         final  byte[] LF = {10};
         return new String(LF);
    }
+    
+    
+    
+    public String emphasized(boolean enabled) {
+        final byte[] EmphasizedOff={27 ,0};
+        final byte[] EmphasizedOn={27 ,1};
+
+        String s="";
+        if(enabled)
+            s = new String(EmphasizedOn);
+        else
+            s = new String(EmphasizedOff);
+
+        return s;
+    } 
+    public String doubleHeight(boolean enabled) {
+        final byte[] DoubleHeight = {27, 33, 17};
+        final byte[] UnDoubleHeight={27, 33, 0};
+
+        String s = "";
+        if(enabled)
+            s = new String(DoubleHeight);
+        else
+            s = new String(UnDoubleHeight);
+
+        return s;
+    }
 
 }

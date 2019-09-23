@@ -37,7 +37,7 @@ public class PrinteCommandTester {
 	}
 	
 	private String build() {
-		templateProcesser.build(PrintCommands.FONT).build(PrintCommands.ALIGN).build(PrintCommands.LINE).buildFeed();
+		templateProcesser.build(PrintCommands.FONT).build(PrintCommands.ALIGN).build(PrintCommands.LINE).build(PrintCommands.CHAR).buildFeed();
 		return templateProcesser.getTemplateString();
 	}
 	
