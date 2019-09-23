@@ -45,7 +45,7 @@ public class PrinteCommandTester {
 		VelocityEngine velocityEngine = new VelocityEngine();
 		velocityEngine.init();
 		    
-		Template t = velocityEngine.getTemplate("./src/main/java/com/bnb/gj/general/printer/test.vm");
+		Template t = velocityEngine.getTemplate("./src/main/java/com/bnb/gj/general/printer/wiki/test.vm");
 		     
 		VelocityContext context = new VelocityContext();
 		context.put("name","Will john");
