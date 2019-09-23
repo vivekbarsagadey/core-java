@@ -1,0 +1,8 @@
+|w:align:left| |w:font:48| |w:char:emphasized:on|this is name 1 data |w:char:doubleHeight:on| $name |w:char:doubleHeight:off| |w:char:emphasized:off| |w:line:new||w:line:new||w:line:new|
+|w:align:right| |w:font:49| this is name 2 data $name|w:line:new||w:line:new|
+|w:align:center| |w:font:48| this is name 3 data $name|w:line:new|
+
+
+
+
+
