@@ -1,4 +1,4 @@
-package com.bnb.gj.general.printer;
+package com.bnb.gj.general.printer.wiki;
 
 public class PrintCommandsProcesser {
 	String initdata = "";
