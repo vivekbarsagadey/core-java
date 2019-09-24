@@ -38,6 +38,9 @@ public class TemplateProcesser {
 		if(PrintCommands.CHAR.equalsIgnoreCase(command) ) {
 			buildChar(PrintCommands.CHAR);
 		}
+		if(PrintCommands.TAB.equalsIgnoreCase(command) ) {
+			buildHorizontalTab(PrintCommands.TAB);
+		}
 		return this;
 	}
 	
@@ -57,8 +60,13 @@ public class TemplateProcesser {
 	}
 	
 	private void buildLine(String command) {
-		this.templateString = this.templateString.replaceAll(Pattern.quote(command+"new|"), processer.newLine());
+		this.templateString = this.templateString.replaceAll(Pattern.quote(command+"new|"), processer.newLine());	
 		
+	}
+
+	private void buildHorizontalTab(String command) {
+		this.templateString = this.templateString.replaceAll(Pattern.quote(command+"horizontal|"), processer.horizontalTab());	
+		this.templateString = this.templateString.replaceAll(Pattern.quote(command+"horizontalPosition|"), processer.horizontalTabPosition());	
 		
 	}
 	
@@ -69,8 +77,7 @@ public class TemplateProcesser {
 		
 		this.templateString = this.templateString.replaceAll(Pattern.quote(command+"doubleHeight:on|"), processer.doubleHeight(true)) ;
 		this.templateString = this.templateString.replaceAll(Pattern.quote(command+"doubleHeight:off|"), processer.doubleHeight(false)) ;
-		
-		
+			
 	}
 	
 	

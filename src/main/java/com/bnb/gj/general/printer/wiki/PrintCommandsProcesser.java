@@ -21,7 +21,6 @@ public class PrintCommandsProcesser {
 	
 	public String feed(byte lines) {
         final byte[] Feed = {27,100,lines};
-        String s = new String(Feed);
         return new String(Feed);
     }
 	
@@ -51,13 +50,21 @@ public class PrintCommandsProcesser {
     public String newLine() {
         final  byte[] LF = {10};
         return new String(LF);
-   }
+    }
     
+    public String horizontalTab() {
+        final  byte[] HT = {9};
+        return new String(HT);
+    }
     
+    public String horizontalTabPosition() {
+        final  byte[] HTP = {27, 68, 10};
+        return new String(HTP);
+    }
     
     public String emphasized(boolean enabled) {
-        final byte[] EmphasizedOff={27 ,0};
-        final byte[] EmphasizedOn={27 ,1};
+        final byte[] EmphasizedOff={27 , 69, 0};
+        final byte[] EmphasizedOn={27 ,69, 1};
 
         String s="";
         if(enabled)

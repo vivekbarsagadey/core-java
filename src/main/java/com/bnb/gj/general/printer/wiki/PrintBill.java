@@ -39,7 +39,7 @@ public class PrintBill {
 	}
 	
 	private String build() {
-		templateProcesser.build(PrintCommands.FONT).build(PrintCommands.ALIGN).build(PrintCommands.LINE).build(PrintCommands.CHAR).buildFeed();
+		templateProcesser.build(PrintCommands.FONT).build(PrintCommands.ALIGN).build(PrintCommands.LINE).build(PrintCommands.CHAR).build(PrintCommands.TAB).buildFeed();
 		return templateProcesser.getTemplateString();
 	}
 	
@@ -83,9 +83,9 @@ public class PrintBill {
 		context.put("StringUtil", new StringUtil());
 		
 		
-		List l = new ArrayList<>();
-		l.add(new Item("aa","1","200","222"));
-		context.put("list",l);
+		//List l = new ArrayList<>();
+		//l.add(new Item("aa","1","200","222"));
+		//context.put("list",l);
 		
 		     
 		StringWriter writer = new StringWriter();

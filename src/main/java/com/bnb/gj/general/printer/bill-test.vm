@@ -1,30 +1,32 @@
 
 
-|w:char:doubleHeight:on|$name|w:char:doubleHeight:off|
+|w:align:center||w:char:doubleHeight:on||w:char:emphasized:on|$name|w:char:doubleHeight:off|
 |w:align:center|Lane No 7, KP 
 |w:align:center|Pune 987771 
-|w:align:left|Bill No : 2222  Date : 22/1/2019
-Table No: 22    Cover : 3000
-Item      Qty   Rate     Amount
+|w:align:center|Bill No : 2222  Date : 22/1/2019
+|w:align:center|Table No: 22    Cover : 3000
+--------------------------------
+Item  Qty  Rate   Amount
 --------------------------------
 #foreach( $item in $bill.items )
-$item.name  $item.qty   $item.ammount    $item.totalAmmount
+$item.name|w:tab:horizontal|$item.qty  $item.ammount|w:tab:horizontal|  $item.totalAmmount
 #end
 
 --------------------------------                 
-        Sub Total     1400.00
-        SC 	7.50%       50.00
-        GST  7.50%      50.00
-        ABC  7.50%      50.00
+Sub  	Total     1400.00
+SC   	7.50%     50.00       	
+GST  	7.50%     50.00       
+ABC  	7.50%     50.00        
+
 --------------------------------     
-            Total    30000.00
+|w:align:left|Total          30000.00            
 
-Grand Total (Rs) : 30000.00 
+|w:align:left|Grand Total (Rs) : 30000.00 
 
-VATIN: 299342342
-GSTIN: 2131312321
+|w:align:left|VATIN: 299342342
+|w:align:left|GSTIN: 2131312321
       
-      Thank You Visit Again
+|w:align:center|Thank You Visit Again
 
 
 
