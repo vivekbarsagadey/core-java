@@ -9,7 +9,7 @@
 Item  Qty  Rate   Amount
 --------------------------------
 #foreach( $item in $bill.items )
-$item.name|w:tab:horizontal|$item.qty  $item.ammount|w:tab:horizontal|  $item.totalAmmount
+|w:line:just:30:$item.name||w:tab:horizontal|$item.qty  $item.ammount|w:tab:horizontal|  $item.totalAmmount
 #end
 
 --------------------------------                 

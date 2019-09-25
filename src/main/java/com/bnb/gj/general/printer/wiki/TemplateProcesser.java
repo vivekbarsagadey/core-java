@@ -60,8 +60,36 @@ public class TemplateProcesser {
 	}
 	
 	private void buildLine(String command) {
-		this.templateString = this.templateString.replaceAll(Pattern.quote(command+"new|"), processer.newLine());	
+		this.templateString = this.templateString.replaceAll(Pattern.quote(command+"new|"), processer.newLine());
+		var newCommand = getJustLineCommand(command+"just:");
+		if(newCommand!=null) {
+			var lineData = getLineData(newCommand);
+			if(lineData.length ==5) {
+				var str = lineData[4];
+				var data = lineData[4].substring(0, str.length()-1);
+				this.templateString = this.templateString.replaceAll(Pattern.quote(newCommand), processer.justLine(Long.parseLong(lineData[3]),data));
+			}
+			
+		}
 		
+	}
+	
+	
+	private String [] getLineData(String data) {
+		return data.split(":");
+	}
+	
+	private String getJustLineCommand(String command) {
+		String findCommand  = null;
+		var commandLen = command.length();
+		if(this.templateString.contains(command)) {
+			int index = this.templateString.indexOf(command);
+			int lastindex = this.templateString.indexOf("|",index+commandLen);
+			var data = this.templateString.substring(index+commandLen,lastindex);
+			findCommand = command+data+"|";
+			System.out.println("New data "+findCommand);
+		}
+		return findCommand;
 	}
 
 	private void buildHorizontalTab(String command) {

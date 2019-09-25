@@ -1,5 +1,8 @@
 package com.bnb.gj.general.printer.wiki;
 
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
+
 public class PrintCommandsProcesser {
 	String initdata = "";
 
@@ -50,6 +53,30 @@ public class PrintCommandsProcesser {
     public String newLine() {
         final  byte[] LF = {10};
         return new String(LF);
+    }
+    
+    public String justLine(Long len, String data) {
+    	//System.out.println("data >>>> "+data);
+    	//System.out.println("len >>>> "+len);
+    	if(data.length() > len) {
+    		AtomicInteger splitCounter = new AtomicInteger(0);
+    		var newData = data
+            .chars()
+            .mapToObj(_char -> String.valueOf((char)_char))
+            .collect(Collectors.groupingBy(stringChar -> splitCounter.getAndIncrement() / len
+                                        ,Collectors.joining()))
+            .values();
+    		System.out.println("newData >>>>>>>>>>>>>>>>>>> ");
+    		System.out.println(newData);
+    		data = newData.stream()
+    	            .map( Object::toString )
+    	            .collect( Collectors.joining( newLine() ) );
+    		
+    	}
+    	System.out.println("data :::::::::::: ");
+    	System.out.println(data);
+    	System.out.println("data END:::::::::::: ");
+    	return data;
     }
     
     public String horizontalTab() {

@@ -1,6 +1,7 @@
 package com.bnb.gj.general.printer.wiki;
 
 import java.io.StringWriter;
+import java.util.ArrayList;
 
 import javax.print.Doc;
 import javax.print.DocFlavor;
@@ -15,6 +16,9 @@ import javax.print.attribute.standard.PrinterName;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
+
+import com.bnb.gj.general.printer.Bill;
+import com.bnb.gj.general.printer.Item;
 
 public class PrinteCommandTester {
 	
@@ -49,6 +53,19 @@ public class PrinteCommandTester {
 		     
 		VelocityContext context = new VelocityContext();
 		context.put("name","Will john");
+		var items = new ArrayList<Item>();
+		items.add(new Item("aa","1","200","222"));
+		items.add(new Item("weq","4","400","5552"));
+		items.add(new Item("wrqw","3","5500","232"));
+		items.add(new Item("wrwe","5","2550","232"));
+		Bill bill = new Bill();
+		
+		bill.setName("koop");
+		bill.setNumber("10001");
+		bill.setAddress("Lane No 7, KP");
+		bill.setItems(items);
+		
+		context.put("bill",bill);
 		StringWriter writer = new StringWriter();
 		t.merge( context, writer );
 		System.out.println("writer.toString() >> "+writer.toString());

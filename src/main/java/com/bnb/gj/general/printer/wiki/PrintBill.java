@@ -29,7 +29,8 @@ public class PrintBill {
 	public static void main(String[] args) {
 		var t = new PrintBill();
 		t.init();
-		t.print(t.templateProcesser.getTemplateString());
+		t.templateProcesser.getTemplateString();
+		//t.print(t.templateProcesser.getTemplateString());
 	}
 	
 	private void init() {
@@ -71,10 +72,10 @@ public class PrintBill {
 		bill.setAddress("Lane No 7, KP");
 		
 		var items = new ArrayList<Item>();
-		items.add(new Item("aa","1","200","222"));
-		items.add(new Item("weq","4","400","5552"));
-		items.add(new Item("wrqw","3","5500","232"));
-		items.add(new Item("wrwe","5","2550","232"));
+		items.add(new Item("Penne served in a Creamy Mushroom Sauce (Veg)","1","200","222"));
+		items.add(new Item("Spaghetti Alio olio","4","400","5552"));
+		items.add(new Item("Spaghetti Alio olio","3","5500","232"));
+		items.add(new Item("sa d asd ads","5","2550","232"));
 		
 		bill.setItems(items);
 		
