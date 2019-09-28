@@ -9,17 +9,25 @@ import java.awt.Graphics2D;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
 import java.awt.print.PrinterException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
- 
+
 import javax.print.Doc;
 import javax.print.DocFlavor;
 import javax.print.DocPrintJob;
+import javax.print.PrintException;
 import javax.print.PrintService;
 import javax.print.PrintServiceLookup;
 import javax.print.SimpleDoc;
+import javax.print.attribute.DocAttributeSet;
+import javax.print.attribute.HashDocAttributeSet;
 import javax.print.attribute.HashPrintRequestAttributeSet;
 import javax.print.attribute.PrintRequestAttributeSet;
+import javax.print.attribute.standard.MediaSizeName;
+import javax.print.attribute.standard.OrientationRequested;
  
 public class PrinterService implements Printable {
 	
@@ -123,6 +131,81 @@ public class PrinterService implements Printable {
 		}
  
 		return null;
+	}
+	
+	
+	public void printHtml(String printerName, String fileName) {
+		
+		// find the printService of name printerName
+		DocFlavor flavor = DocFlavor.INPUT_STREAM.TEXT_HTML_HOST;
+		PrintRequestAttributeSet pras = new HashPrintRequestAttributeSet();
+ 
+		PrintService printService[] = PrintServiceLookup.lookupPrintServices(
+				DocFlavor.BYTE_ARRAY.AUTOSENSE, pras);
+		PrintService service = findPrintService(printerName, printService);
+ 
+		DocPrintJob job = service.createPrintJob();
+ 
+		try {
+			
+			FileInputStream file = new FileInputStream(fileName);
+			DocAttributeSet da = new HashDocAttributeSet();
+			Doc doc = new SimpleDoc(file, flavor, da);
+ 
+			
+			job.print(doc, pras);
+ 
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+ 
+	}
+	
+	public void printPdf(String printerName, String fileName) {
+		
+		try {
+			PrinterService ps = new PrinterService();
+			// get the printer service by printer name
+			PrintService pss = PrintServiceLookup.lookupDefaultPrintService();// ps.getCheckPrintService("Samsung ML-2850 Series PCL6 Class Driver");
+			System.out.println("Printer - " + pss.getName());
+			DocPrintJob job = pss.createPrintJob();
+			DocAttributeSet das = new HashDocAttributeSet();
+			das.add(OrientationRequested.PORTRAIT);
+			das.add(MediaSizeName.INVOICE);
+			Doc document = new SimpleDoc(new FileInputStream(new File(fileName)), DocFlavor.INPUT_STREAM.AUTOSENSE, das);
+			// new htmldo
+			PrintRequestAttributeSet pras = new HashPrintRequestAttributeSet();
+			job.print(document, pras);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (PrintException e) {
+			e.printStackTrace();
+		}
+ 
+	}
+	
+	public void printImage(String printerName, String fileName) {
+		
+		try {
+			PrinterService ps = new PrinterService();
+			// get the printer service by printer name
+			PrintService pss = PrintServiceLookup.lookupDefaultPrintService();// ps.getCheckPrintService("Samsung ML-2850 Series PCL6 Class Driver");
+			System.out.println("Printer - " + pss.getName());
+			DocPrintJob job = pss.createPrintJob();
+			DocAttributeSet das = new HashDocAttributeSet();
+			das.add(OrientationRequested.PORTRAIT);
+			das.add(MediaSizeName.INVOICE);
+			Doc document = new SimpleDoc(new FileInputStream(new File(fileName)), DocFlavor.INPUT_STREAM.PNG, das);
+			// new htmldo
+			PrintRequestAttributeSet pras = new HashPrintRequestAttributeSet();
+			job.print(document, pras);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (PrintException e) {
+			e.printStackTrace();
+		}
+ 
 	}
 }
  

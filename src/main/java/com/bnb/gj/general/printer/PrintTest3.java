@@ -19,9 +19,9 @@ import javax.print.attribute.PrintRequestAttributeSet;
 import javax.print.attribute.standard.PrinterName;
 public class PrintTest3 {
 	
-	private static final String PRINTER_NAME = "office-kot-1";
+	private static final String PRINTER_NAME = "\\\\192.168.100.23\\POS-58-Series";
 
-	public static void main(String[] args) {
+	public static void mainOld(String[] args) {
 
 		try {
 			AttributeSet attrSet = new HashPrintServiceAttributeSet(new PrinterName(PRINTER_NAME, null)); //EPSON TM-U220 ReceiptE4
@@ -39,7 +39,7 @@ public class PrintTest3 {
 		}
 	}
 	
-	public static void mainOld(String[] args) {
+	public static void main(String[] args) {
 
 		PrinterService printerService = new PrinterService();
 

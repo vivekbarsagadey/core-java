@@ -5,6 +5,7 @@
 |w:align:center|Pune 987771 
 |w:align:center|Bill No : 2222  Date : 22/1/2019
 |w:align:center|Table No: 22    Cover : 3000
+|w:align:left|
 --------------------------------
 Item  Qty  Rate   Amount
 --------------------------------
@@ -12,13 +13,13 @@ Item  Qty  Rate   Amount
 |w:line:just:30:$item.name||w:tab:horizontal|$item.qty  $item.ammount|w:tab:horizontal|  $item.totalAmmount
 #end
 
---------------------------------                 
+----------bb----------------------     
 Sub  	Total     1400.00
 SC   	7.50%     50.00       	
 GST  	7.50%     50.00       
 ABC  	7.50%     50.00        
 
---------------------------------     
+----------------aa----------------
 |w:align:left|Total          30000.00            
 
 |w:align:left|Grand Total (Rs) : 30000.00 

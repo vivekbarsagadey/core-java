@@ -55,7 +55,14 @@ public class PrintCommandsProcesser {
         return new String(LF);
     }
     
-    public String justLine(Long len, String data) {
+    public String[] justLine(int len, String data) {
+    	//System.out.println("data >>>> "+data);
+    	//System.out.println("len >>>> "+len);
+    	
+    	return data.split("(?<=\\G.{"+len+"})");
+    }
+    
+    public String justLineOld(Long len, String data) {
     	//System.out.println("data >>>> "+data);
     	//System.out.println("len >>>> "+len);
     	if(data.length() > len) {

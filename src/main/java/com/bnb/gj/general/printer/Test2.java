@@ -32,7 +32,13 @@ public class Test2 {
 		//printerService.printString("EPSON TM-T82II Receipt5", VelocityTemplate.generate());
 		
 		
-		printerService.printString("\\\\192.168.100.23\\POS-58-Series", VelocityTemplate.generate());
+		//printerService.printString("\\\\192.168.100.23\\POS-58-Series", VelocityTemplate.generate());
+		
+		//printerService.printHtml("office-kot-1", "./src/main/java/com/bnb/gj/general/printer/abc.html");
+		
+		//printerService.printPdf("\\\\192.168.100.23\\POS-58-Series", "./src/main/java/com/bnb/gj/general/printer/abc.pdf");
+		printerService.printImage("\\\\192.168.100.23\\POS-58-Series", "./src/main/java/com/bnb/gj/general/printer/full-image.png");
+		
 		
  
 		// cut that paper!
