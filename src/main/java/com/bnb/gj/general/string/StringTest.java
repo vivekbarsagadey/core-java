@@ -3,7 +3,9 @@ package com.bnb.gj.general.string;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.UUID;
@@ -53,6 +55,11 @@ public class StringTest {
 		tt.changeBig(autoRef);
 		System.out.println("New value >>>>> " +autoRef.get());
 		System.out.println(">>>"+tt.getPasword());
+		
+		Map<String, String> storeTaxs = new HashMap<String, String>();
+		storeTaxs.put("as", "asdasd");
+		
+		System.out.println(storeTaxs.isEmpty());
 	}
 	
 	
