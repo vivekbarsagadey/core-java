@@ -5,8 +5,8 @@ import org.jasypt.util.password.StrongPasswordEncryptor;
 public class JasyptEncryption {
 
 	public static void main(String[] args) {
-		String userPassword = "wiki$1.2$smartwiki&masterkey";
-		String inputPassword = "wiki$1.2$smartwiki&masterkey";
+		String userPassword = "wiki$1.4$smartwiki&Masterkey";
+		String inputPassword = "wiki$1.4$smartwiki&Masterkey";
 		StrongPasswordEncryptor passwordEncryptor = new StrongPasswordEncryptor();
 		String encryptedPassword = passwordEncryptor.encryptPassword(userPassword);
 		System.out.println(encryptedPassword);

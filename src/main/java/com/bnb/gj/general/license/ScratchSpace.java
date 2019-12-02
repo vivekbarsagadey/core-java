@@ -24,7 +24,7 @@ public class ScratchSpace {
 
 
 	public static void main(String[] args) {
-		String userName = "2654e905-f93b-4bc1-aa53-62e50386c275";
+		String userName = "cc71b269-6e14-4f62-9323-160ce7f4dace";
 		String productKey = "wiki";
 		String versionNumber = "1.2";
 
@@ -32,7 +32,7 @@ public class ScratchSpace {
 		String pattern = "MM-dd-yyyy";
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 
-		today.plusYears(1);
+		today = today.plusDays(20);
 
 		String date = today.getMonthValue() + "-" + today.getDayOfMonth() + "-" + today.getYear();
 		System.out.println("date" + date);
@@ -40,7 +40,7 @@ public class ScratchSpace {
 		var datestr = getDateStringFromDate(new Date(), DATE_STD_FORMATTER);
 		System.out.println("datestr"+datestr);
 		
-		date = "07-03-2019";
+		//date = "11-04-2019";
 
 		final String licenseKey = createLicenseKey(userName, productKey, versionNumber, date);
 		System.out.println("licenseKey = " + licenseKey);
