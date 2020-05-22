@@ -1,4 +1,4 @@
-package com.bnb.gj.general.data;
+package com.bnb.gj.general.date;
 
 import java.time.Instant;
 import java.time.LocalDate;
