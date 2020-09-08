@@ -11,6 +11,7 @@ public class Ch1 {
 
         /*List<Person> persons = new ArrayList<Person>();*/
         List<String> names = Arrays.asList("First","Second");
+        List<String> namesTest = new ArrayList<>();
         names.forEach(name -> name.toUpperCase());
 
 
@@ -48,7 +49,16 @@ public class Ch1 {
 
        // List<Integer> list = Arrays.asList(1,2,3,4,5,6,7);
        // list.stream().map((x) -> x*x).forEach(System.out::println);
-
+        
+        System.out.println("namesTest" + namesTest.isEmpty());
+        
+        
+        System.out.println(namesTest.stream().reduce((r,s)->{ return r+','+s;}).get());
+        
+        Arrays.asList("");
+        
+        
+        
 
 
 

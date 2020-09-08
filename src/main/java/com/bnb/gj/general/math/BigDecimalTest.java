@@ -9,6 +9,7 @@ public class BigDecimalTest {
 	public static void main(String[] args) {
 		
 		BigDecimal value = new BigDecimal(33.99);
+		System.out.println(value.negate());
 		
 		BigDecimal scaled = value.setScale(0, RoundingMode.CEILING);
 		var roundOff = scaled.subtract(value);
