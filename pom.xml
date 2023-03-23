@@ -14,7 +14,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>14</java.version>
-		<spring.framework>6.0.0</spring.framework>
+		<spring.framework>6.0.7</spring.framework>
 	</properties>
 
 	<dependencies>
